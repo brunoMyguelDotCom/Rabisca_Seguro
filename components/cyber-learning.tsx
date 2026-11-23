@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, BookOpen, Check, ChevronRight, Cloud, Eye, FileWarning, Fingerprint, Heart, KeyRound, LockKeyhole, Mail, Menu, Monitor, MousePointer2, Shield, ShieldAlert, ShoppingBag, Smartphone, Sparkles, Wifi, X } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, BookOpen, ChevronRight, Cloud, Eye, FileWarning, Fingerprint, Heart, KeyRound, LockKeyhole, Mail, Menu, Monitor, MousePointer2, Shield, ShieldAlert, ShoppingBag, Smartphone, Sparkles, Wifi, X } from 'lucide-react'
 
 type Lesson = { number: string; title: string; short: string; icon: typeof Mail; learn: string; tip: string }
 const lessons: Lesson[] = [
@@ -166,7 +166,7 @@ export function CyberLearning() {
     <section className="lessons-section" id="temas">
       <div className="section-heading"><div><span className="eyebrow">ESCOLHA SUA AVENTURA</span><h2>O que vamos <span className="underline-word">investigar?</span></h2></div><span className="heading-side-note">clique numa missão<br />e coloque o radar pra funcionar <ArrowDown size={16} /></span></div>
       <div className="lesson-grid">{lessons.map((item, i) => { const Icon = item.icon; return <article className={`lesson-card card-${i + 1}`} key={item.number}>
-        <div className="lesson-top"><span className="lesson-number">{item.number}</span><span className="lesson-icon"><Icon size={24} strokeWidth={1.8} /></span>{completed.includes(i) && <span className="done-badge" aria-label="Concluída"><Check size={14} /></span>}</div>
+        <div className="lesson-top"><span className="lesson-number">{item.number}</span><span className="lesson-icon"><Icon size={24} strokeWidth={1.8} /></span></div>
         <h3>{item.title}</h3><p>{item.short}</p><button className="lesson-link" onClick={() => openLesson(i)}>{completed.includes(i) ? 'Revisitar missão' : 'Investigar missão'} <ArrowUpRight size={15} /></button><span className="card-scribble" aria-hidden="true">{i % 2 ? '✳' : '〰'}</span>
       </article> })}</div>
     </section>
